@@ -21,9 +21,23 @@
             }
         </style>
     </head>
+    @php
+        $color = "blue";
+    @endphp
     <body>
         <div class="container mx-auto">
-            <x-alerta />
+            <x-alerta :color="$color" class="mb-4"> {{--no dejar espacios en color="red" (fue cambiado por una variable)--}}
+                <x-slot name="title">
+                    Título lorem
+                </x-slot>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta eaque odit consequuntur id error consequatur dicta blanditiis tempora libero, ut ratione incidunt. Labore voluptas quo dolore sequi corrupti facere adipisci.
+            </x-alerta>
+            <x-alerta> {{--si no se especifica el color, toma el que está por defecto en el constructor--}}
+                <x-slot name="title">
+                    Título hw
+                </x-slot>
+                hola mundo
+            </x-alerta>
         </div>
     </body>
 </html>

@@ -6,14 +6,15 @@ use Illuminate\View\Component;
 
 class Alerta extends Component
 {
+    public $color;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($color = 'red') //color por defecto si no recibe una variable
     {
-        //
+        $this->color = $color;
     }
 
     /**
