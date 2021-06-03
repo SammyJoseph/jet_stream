@@ -105,6 +105,7 @@
         </div>
         <div class="alert-description text-sm text-{{$color}}-600">
             {{$slot}} <br>
+            <i>{{$metodo1()}}</i>
         </div>
     </div>
 </div> 

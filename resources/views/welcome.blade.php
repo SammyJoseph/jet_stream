@@ -22,7 +22,8 @@
         </style>
     </head>
     @php
-        $color = "blue";
+        $color = "green";
+        $alert = "alerta"; //contenido dinámico, puede ser alerta o alerta2
     @endphp
     <body>
         <div class="container mx-auto">
@@ -38,6 +39,22 @@
                 </x-slot>
                 hola mundo
             </x-alerta>
+
+            {{-- <x-alerta2 color="blue" />
+            <x-alerta2 /> --}}
+            <x-alerta2 color="blue" class="my-4">
+                <x-slot name="title">Hola mundo</x-slot>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum asperiores repellendus sit, neque doloribus fuga qui aspernatur eius atque dolore. Ipsa asperiores quaerat in ipsam iure optio voluptates quidem quos.
+            </x-alerta2>
+            <x-alerta2 color="pink" class="my-4">
+                <x-slot name="title">Hola mundo</x-slot>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum asperiores repellendus sit, neque doloribus fuga qui aspernatur eius atque dolore. Ipsa asperiores quaerat in ipsam iure optio voluptates quidem quos.
+            </x-alerta2>
+
+            <x-dynamic-component color="yellow" :component="$alert">
+                <x-slot name="title">Hola mundo</x-slot>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum asperiores repellendus sit, neque doloribus fuga qui aspernatur eius atque dolore. Ipsa asperiores quaerat in ipsam iure optio voluptates quidem quos.
+            </x-dynamic-component>
         </div>
     </body>
 </html>

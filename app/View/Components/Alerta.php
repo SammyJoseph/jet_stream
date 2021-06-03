@@ -26,4 +26,9 @@ class Alerta extends Component
     {
         return view('components.alerta');
     }
+    public function metodo1(){
+        if($this->color == "green"){
+            return "Esta es una alerta que indica éxito.";
+        }
+    }
 }
